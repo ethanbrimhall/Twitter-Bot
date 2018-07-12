@@ -6,11 +6,9 @@ var bot = new Twit(config);
 setInterval(getTweets, 60 * 1000 * 5); //every 5 minutes
 
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
-async function getTweets(){
+
+function getTweets(){
 
 	bot.get('search/tweets', { q: '"coding books"', count: 5, tweet_mode: 'extended', lang: 'en'}, function(err, data, response) {
 
